@@ -1,0 +1,21 @@
+package com.rubypaper.domain;
+
+
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: Board
+ *
+ */
+@Entity
+@Table(name = "Board")
+public class Board {
+
+	
+	private static final long serialVersionUID = 1L;
+
+	public Board() {
+		super();
+	}
+   
+}
