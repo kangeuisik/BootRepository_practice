@@ -15,8 +15,12 @@
 			<property name="hibernate.format_sql" value="true"/>
 			<property name="hibernate.use_sql_comments" value="false"/>
 			<property name="hibernate.id.new_generator_mappings" value="true"/>
-			<!-- create -->
-			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<!-- create or update 
+				create : 생성
+				update : 게시글을 누적시킴.
+				create-drop : 앱이 종료되기 직전에 생성된 테이블 삭제.
+			 -->
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
 		</properties>
 	</persistence-unit>
 </persistence>
