@@ -18,7 +18,6 @@ import javax.persistence.*;
 					allocationSize = 1) //테이블에서 값을꺼낼때만다의 증가값
 public class Board {
 	@Id
-//	@GeneratedValue 만 입력하면 기본 값인 AUTO가 적용  -->자동전략
 //	@GeneratedValue(strategy = GenerationType.TABLE, 
 //					generator = "BOARD_SEQ_GENERATOR")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,

@@ -7,21 +7,14 @@ import javax.persistence.*;
 
 
 @Entity
-//@TableGenerator(name = "BOARD_SEQ_GENERATOR",
-//				table = "ALL_SEQUENCES",
-//				pkColumnValue = "BOARD_SEQ",
-//				initialValue = 0, //BOARD_SEQ로 시작되는 번호 0
-//				allocationSize = 1) //테이블에서 값을꺼낼때만다의 증가값
-@SequenceGenerator(name = "BOARD_SEQ_GENERATOR",
-					sequenceName = "BOARD_SEQUENCE",
-					initialValue = 1, //BOARD_SEQ로 시작되는 번호 1
-					allocationSize = 1) //테이블에서 값을꺼낼때만다의 증가값
+@TableGenerator(name = "BOARD_SEQ_GENERATOR",
+				table = "ALL_SEQUENCES",
+				pkColumnValue = "BOARD_SEQ",
+				initialValue = 0, //BOARD_SEQ로 시작되는 번호 0
+				allocationSize = 1) //테이블에서 값을꺼낼때만다의 증가값
 public class Board {
 	@Id
-//	@GeneratedValue 만 입력하면 기본 값인 AUTO가 적용  -->자동전략
-//	@GeneratedValue(strategy = GenerationType.TABLE, 
-//					generator = "BOARD_SEQ_GENERATOR")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+	@GeneratedValue(strategy = GenerationType.TABLE, 
 					generator = "BOARD_SEQ_GENERATOR")
 	private Long seq;
 	private String title;
