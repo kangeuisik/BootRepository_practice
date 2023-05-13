@@ -12,8 +12,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.rubypaper.domain.Board;
@@ -81,17 +83,25 @@ public class QueryMethodTest {
 //		}
 //	}
 	
-	@Test
-	public void findByTitleContaining() {
-		Pageable paging = PageRequest.of(0, 5);
-		//첫번째 인자는 페이지번호
-		//두번째인자는 검색할 데이터의 개수
-		List<Board> boardList = boardRep.findByTitleContaining("제목", paging);
-		
-		System.out.println("검색결과");
-		for(Board board : boardList) {
-			System.out.println(board.toString());
-		}
-	}
+//	@Test
+//	public void findByTitleContaining() {
+//		Pageable paging = PageRequest.of(0, 5,Sort.Direction.DESC,"seq");
+//		//첫번째 인자는 페이지번호
+//		//두번째인자는 검색할 데이터의 개수
+//		//3,4번째 인자는 정렬 처리 DESC 또는 ASC가 있음.
+//		Page<Board> boardList = boardRep.findByTitleContaining("제목", paging);
+//		
+//		System.out.println("Page Size : " + boardList.getSize());
+//		System.out.println("Total Pages : " + boardList.getTotalPages());
+//		System.out.println("Total Count : " + boardList.getTotalElements());
+//		System.out.println("Next : " + boardList.nextPageable());
+//		
+//		List<Board> realBoardList = boardList.getContent();
+//		
+//		System.out.println("검색결과");
+//		for(Board board : realBoardList) {
+//			System.out.println(board.toString());
+//		}
+//	}
 	
 }
