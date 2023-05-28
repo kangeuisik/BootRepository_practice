@@ -48,15 +48,15 @@ public class QueryAnnotationTest {
 //			System.out.println("-->" + Arrays.toString(row));
 //		}
 //	}
-	@Test
-	public void testQueryAnnotationTest4() {
-		List<Object[]> boardList = boardRep.queryAnnotationTest4("테스트 제목 10");
-		
-		System.out.println("검색결과");
-		for(Object[] row : boardList) {
-			System.out.println("-->" + Arrays.toString(row));
-		}
-	}
+//	@Test
+//	public void testQueryAnnotationTest4() {
+//		List<Object[]> boardList = boardRep.queryAnnotationTest4("테스트 제목 10");
+//		
+//		System.out.println("검색결과");
+//		for(Object[] row : boardList) {
+//			System.out.println("-->" + Arrays.toString(row));
+//		}
+//	}
 	
 //	@Test
 //	public void testQueryAnnotationTest5() {
