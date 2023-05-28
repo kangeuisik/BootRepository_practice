@@ -34,6 +34,7 @@ public class DynamicQueryTest {
 			builder.and(qboard.title.like("%"+searchKeyword +"%"));
 		}else if(searchCondtion.equals("CONTENT")) {
 			builder.and(qboard.content.like("%" +searchKeyword+"%"));
+			//BooleanBuilder 객체를 이용하면 builder에 and/or에 해당하는 조건을 사용가능
 		}
 		
 		Pageable paging = PageRequest.of(0,5);
@@ -44,6 +45,7 @@ public class DynamicQueryTest {
 		for(Board board : boardList) {
 			System.out.println("-->" + board.toString());
 		}
+		//"테스트 제목 10"이란 글을 제목에 포함한 모든글을 5개단위로 페이징처리한 결과값을 얻을수 있다
 	}
 
 }

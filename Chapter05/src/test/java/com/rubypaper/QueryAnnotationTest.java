@@ -48,25 +48,25 @@ public class QueryAnnotationTest {
 //			System.out.println("-->" + Arrays.toString(row));
 //		}
 //	}
-//	@Test
-//	public void testQueryAnnotationTest4() {
-//		List<Object[]> boardList = boardRep.queryAnnotationTest4("테스트 제목 10");
-//		
-//		System.out.println("검색결과");
-//		for(Object[] row : boardList) {
-//			System.out.println("-->" + Arrays.toString(row));
-//		}
-//	}
-	
 	@Test
-	public void testQueryAnnotationTest5() {
-		Pageable paging = PageRequest.of(0, 3, Sort.Direction.DESC, "seq"); 
-		List<Board> boardList = boardRep.queryAnnotationTest5(paging);
+	public void testQueryAnnotationTest4() {
+		List<Object[]> boardList = boardRep.queryAnnotationTest4("테스트 제목 10");
 		
 		System.out.println("검색결과");
-		for(Board board : boardList) {
-			System.out.println("-->" + board.toString());
+		for(Object[] row : boardList) {
+			System.out.println("-->" + Arrays.toString(row));
 		}
 	}
-	//게시글 3개 단위로 페이징 처리 됨.ㄴ
+	
+//	@Test
+//	public void testQueryAnnotationTest5() {
+//		Pageable paging = PageRequest.of(0, 3, Sort.Direction.DESC, "seq"); 
+//		List<Board> boardList = boardRep.queryAnnotationTest5(paging);
+//		
+//		System.out.println("검색결과");
+//		for(Board board : boardList) {
+//			System.out.println("-->" + board.toString());
+//		}
+//	}
+//	//게시글 3개 단위로 페이징 처리 됨
 }
