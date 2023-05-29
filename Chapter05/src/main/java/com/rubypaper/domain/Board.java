@@ -18,7 +18,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "member")
 @Entity
 public class Board {
 	//Entity 이름과 클래스 이름이 "Board"이름과 동일해서 생략

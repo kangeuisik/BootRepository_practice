@@ -1,8 +1,10 @@
 package com.rubypaper;
 
 import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -62,16 +64,32 @@ public class RelationMappingTest {
 //			boardRep.save(board);
 //		}
 //	}
-	@Test //글 조회 검색 테스트
-	public void testManyToOneSelect() {
-		Board board = boardRep.findById(5L).get();
-		
-		System.out.println("[ "+board.getSeq()+"번 게시글 정보 ]");
-		System.out.println("제목 : " + board.getTitle());
-		System.out.println("내용 : " + board.getContent());
-		System.out.println("작성자 : " + board.getWriter());
-		System.out.println("작성일 : " + board.getCreateDate());
-		System.out.println("작성자 권한 : " + board.getMember().getRole());
-	}
+//	@Test //글 조회 검색 테스트
+//	public void testManyToOneSelect() {
+//		Board board = boardRep.findById(5L).get();
+//		
+//		System.out.println("[ "+board.getSeq()+"번 게시글 정보 ]");
+//		System.out.println("제목 : " + board.getTitle());
+//		System.out.println("내용 : " + board.getContent());
+//		System.out.println("작성자 : " + board.getWriter());
+//		System.out.println("작성일 : " + board.getCreateDate());
+//		System.out.println("작성자 권한 : " + board.getMember().getRole());
+//	}
 
+	@Test
+	public void testTwoWayMapping() {
+		Member member = memberRep.findById("회원1").get();
+		
+		System.out.println("===============");
+		System.out.println(member.getName() + "이(가) 저장한 게시글 목록");
+		System.out.println("==============");
+		List<Board> list = member.getPersonBoardList();
+		
+		for(Board board : list) {
+			System.out.println(board.toString());
+		}
+		//stackOverFlow가 발생하는 것을 두개의 객체에서 서로 계속해서 참조를 반복하기 때문..
+		//상호호출의 고리르 끊으려면  Board엔티티의 @ToString을 수정한다
+		
+	}
 }
