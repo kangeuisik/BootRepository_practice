@@ -20,7 +20,7 @@ public class BoardServiceImpl implements BoardService {
 	//글작성
 
 	public void insertBorad(Board board) {
-		
+		boardRep.save(board);
 	}
 	//글보기?
 	public Board getBorad(Board board) {

@@ -3,11 +3,15 @@ package com.rubypaper.controller;
 
 import java.util.List;
 
+import javax.validation.constraints.Positive;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rubypaper.domain.Board;
 import com.rubypaper.service.BoardService;
@@ -24,5 +28,14 @@ public class BoardController {
 		
 		model.addAttribute("boardList",boardList);
 		return "getBoardList";
+	}
+	@GetMapping("/insertBoard")
+	public String insertBoard() {
+		return "insertBoard";
+	}
+	@PostMapping("insertBoard")
+	public String insertBoard(Board board){
+		boardService.insertBorad(board);
+		return "redirect:getBoardList";
 	}
 }
