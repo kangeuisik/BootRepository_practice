@@ -24,7 +24,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 	//글보기?
 	public Board getBorad(Board board) {
-		return null;
+		return boardRep.findById(board.getSeq()).get();
+		// getBoard()메소드는 BoardRepository의 findById메소드를 통해 특정 게시글을 상세조회 하여 리턴...
 	}
 	//글수정
 	public void updateBorad(Board board) {
