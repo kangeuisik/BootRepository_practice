@@ -43,4 +43,15 @@ public class BoardController {
 		model.addAttribute("board",boardService.getBorad(board));
 		return "getBoard";
 	}
+	@PostMapping("/updateBoard")
+	public String updateBoard(Board board) {
+		boardService.updateBorad(board);
+		return "forward:getBoardList";
+	}
+	@GetMapping("/deleteBoard")
+	public String deleteBoard(Board board) {
+		boardService.deleteBorad(board);
+		return "forward:getBoardList";
+	}
+	
 }

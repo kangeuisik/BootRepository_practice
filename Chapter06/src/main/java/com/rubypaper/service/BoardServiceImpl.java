@@ -29,10 +29,14 @@ public class BoardServiceImpl implements BoardService {
 	}
 	//글수정
 	public void updateBorad(Board board) {
+		Board findBoard = boardRep.findById(board.getSeq()).get();
 		
+		findBoard.setTitle(board.getTitle());
+		findBoard.setContent(board.getContent());
+		boardRep.save(findBoard);
 	}
 	//글삭제
 	public void deleteBorad(Board board) {
-		
+		boardRep.deleteById(board.getSeq());
 	}
 }
