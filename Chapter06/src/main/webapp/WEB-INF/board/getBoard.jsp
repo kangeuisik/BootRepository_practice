@@ -19,7 +19,7 @@
 	<table border="1" cellpadding="0" cellspacing="0">
 		<tr>
 			<td bgcolor="orange" width="70">제목</td>
-			<td align="left"> <input type="text" name="title" value="${board.titled }"> </td>
+			<td align="left"> <input type="text" name="title" value="${board.title }"> </td>
 		</tr>
 		<tr>
 			<td bgcolor="orange">작성자</td>
