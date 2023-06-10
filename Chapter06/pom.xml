@@ -60,6 +60,17 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
+	<dependency>
+	    <groupId>org.thymeleaf</groupId>
+	    <artifactId>thymeleaf</artifactId>
+
+	</dependency>
 
 
 	</dependencies>
@@ -69,6 +80,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.thymeleaf</groupId>
+				<artifactId>thymeleaf</artifactId>
+				<version>2.1.2</version>
 			</plugin>
 		</plugins>
 	</build>
